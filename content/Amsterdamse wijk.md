@@ -1,3 +1,4 @@
 # Amsterdamse Wijk
 
-De Amsterdamse wijk (voor 2016 de Amsterdamsebuurt) was bebouwd rond 1900 en oorspronkelijk een arbeiderswijk.
+De Amsterdamse wijk (voor 2016 de Amsterdamsebuurt) was bebouwd rond 1900 en oorspronkelijk een arbeiderswijk waardoor er voornamelijk woonhuizen in de wijk staan. Langs de Amsterdamstraat vind je vele winkels waar je kleding kan kopen, kan middag- of avondeten, elektronica winkels, een drogist en nog vele andere winkels kan vinden waardoor de Amsterdamse wijk een goede bestemming is als je wilt winkelen. Net buiten de Amsterdamse wijk is de Amsterdamse poort, de poort van de oude stadsmuur. Dit mooie oude gebouw is een echte aanrader als je meer wilt leren over de geschiedenis van Haarlem. De Amsterdamse wijk is al oud, maar er is toch veel nieuwbouw te vinden. Dit komt doordat er houtrot werd ontdenkt in de houten palen waarop veel huizen waren gebouwd. Hierdoor waren de huizen niet meer veilig om in te wonen en moesten er dus huizen worden gesloopt en moesten er nieuwe huizen worden gebouwd. Daarvoor waren er ook al veel oude huizen verloren tijdesns het bombardement in 1943 waarbij ongeveer 1600 huizen schaden opliepen.
+

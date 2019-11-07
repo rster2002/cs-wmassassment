@@ -1,4 +1,4 @@
 student name: Bjørn
-student number: 842238
+student number: 642238
 student class: INF1SD
 URL student GitHub repository: https://github.com/rster2002/cs-wmassassment

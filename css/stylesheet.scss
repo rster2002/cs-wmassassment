@@ -21,6 +21,24 @@
     @return $dp * 0.0625rem;
 }
 
+// Mixins
+@mixin default-button($textColor, $textColorHover) {
+    padding: 8px 16px;
+
+    outline: 0;
+    border: 2px solid $secondaryColor;
+    border-radius: 5px;
+    background-color: transparent;
+    color: $textColor;
+    cursor: pointer;
+    transition: 150ms $standardEasing background-color;
+
+    &:hover {
+        background-color: $secondaryColor;
+        color: $textColorHover;
+    }
+}
+
 // Variables
 $displayFont: "UnifrakturMaguntia", cursive, arial;
 $fontFamily: "NotoSerif", serif, arial;
@@ -154,7 +172,7 @@ nav {
 
     background-color: $backgroundColor;
 
-    article {
+    article, #contactContent {
         position: relative;
 
         padding-bottom: 67px + 16px;
@@ -200,6 +218,19 @@ nav {
 
                 border-radius: 5px;
             }
+
+            ul {
+                font-size: 16px;
+                font-family: $fontFamily;
+
+                p {
+                    padding: 0;
+                }
+
+                img {
+                    margin-left: 0;
+                }
+            }
         }
 
         footer {
@@ -213,19 +244,54 @@ nav {
             background-color: #575757;
 
             button {
-                padding: 8px 16px;
+                @include default-button(#ffffff, #ffffff);
+            }
+        }
+    }
+}
 
-                outline: 0;
-                border: 2px solid $secondaryColor;
-                border-radius: 5px;
-                background-color: transparent;
-                color: #ffffff;
-                cursor: pointer;
-                transition: 150ms $standardEasing background-color;
+#sportContent {
+    grid-area: 2 / 1 / 4 / 2;
+}
 
-                &:hover {
-                    background-color: $secondaryColor;
-                }
+#contactContent {
+    grid-area: 3 / 2 / 4 / 3;
+
+    form {
+        width: 95%;
+
+        margin: 16px auto;
+
+        fieldset {
+            border: 0;
+
+            legend {
+                font-family: $fontFamily;
+                font-size: 20px;
+            }
+
+            input {
+                width: 50%;
+                
+                display: block;
+                margin: 8px 0px;
+                
+                font-family: $fontFamily;
+                font-size: 16px;
+            }
+
+            input[type=submit] {
+                @include default-button($secondaryColor, #ffffff);
+
+                width: 100%;
+            }
+
+            textarea {
+                width: 50%;
+
+                resize: vertical;
+                font-family: $fontFamily;
+                font-size: 16px;
             }
         }
     }
@@ -243,7 +309,7 @@ nav {
 // Hide video before it looks bad
 @media screen and (max-width: 900px) {
     .mainHeader {
-        background-image: url(../img/haarlem-header-image.jpg);
+        background-image: url(../img/haarlem-header-image.png);
         background-size: cover;
         background-repeat: no-repeat;
     }
