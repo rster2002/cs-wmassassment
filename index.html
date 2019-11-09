@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en-us">
+<html lang="nl">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,18 @@
         <title>Haarlem</title>
     </head>
     <body>
+        <!-- Nav is responsive for desktop (tablet) and mobile -->
         <nav>
+            <!-- Hamburger appears right, but shows first in dom because of the ~ selector -->
+            <input id="hamburgerToggle" type="checkbox" />
+            <label id="hamburger" for="hamburgerToggle">
+                <span class="hamburgerStyling">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </label>
+            <!-- Content of the nav bar -->
             <h1>Haarlem</h1>
             <ul>
                 <li>
@@ -26,25 +37,29 @@
                     <a href="#sportContent">Sport in Haarlem</a>
                 </li>
                 <li>
-                    <a href="#referralContent">Referral content</a>
+                    <a href="#referralContent">Over de referral</a>
                 </li>
                 <li>
-                    <a href="#contactContent">Contact content</a>
+                    <a href="#contactContent">Neem contact op</a>
                 </li>
             </ul>
         </nav>
+        <!-- Header contains the text that is overladed over the video -->
         <header class="mainHeader">
             <section class="floatingWrapper">
                 <h1>Haarlem</h1>
                 <h2>Om van te genieten</h2>
             </section>
         </header>
+        <!-- Background video. Gets moved up to show behind the text of the header. -->
         <video autoplay muted loop>
             <source src="./video/header-video.mp4" type="video/mp4" />
             <source src="./video/header-video.ogg" type="video/ogg" />
             Je browser kan geen video afspelen
         </video>
+        <!-- Grid that shows all content/articles -->
         <section class="articles">
+            <!-- Contains all content related to Haarlem -->
             <article id="mainContent">
                 <header>
                     <h2>Over Haarlem</h2>
@@ -62,43 +77,56 @@
                     </p>
                     <!-- Two images -->
                     <img src="./img/haarlem-img1.png" alt="Grote Kerk met heldere lucht" title="Grote Kerk" />
-                    <img src="./img/haarlem-img3.jpg" alt="Zaal met schilderijen en een bank in het midden" title="Teylers museum" />
+                    <img src="./img/haarlem-img3.png" alt="Zaal met schilderijen en een bank in het midden" title="Teylers museum" />
                 </section>
                 <footer>
                     <a href="https://www.visithaarlem.com/nl">
-                        <button>Lees verder</button>
+                        Lees verder
                     </a>
                 </footer>
             </article>
+            <!-- Contains all content related to the Amsterdamse Wijk -->
             <article id="secondaryContent">
                 <header>
                     <h2>De Amsterdamse wijk</h2>
                 </header>
                 <section>
                     <p>
-                        
+                        De Amsterdamse wijk (voor 2016 de Amsterdamsebuurt) was bebouwd rond 1900 en oorspronkelijk een arbeiderswijk waardoor
+                        er voornamelijk woonhuizen in de wijk staan. Langs de Amsterdamstraat vind je vele winkels waar je kleding kan kopen,
+                        kan middag- of avondeten, elektronica winkels, een drogist en nog vele andere winkels kan vinden waardoor de Amsterdamse
+                        wijk een goede bestemming is als je wilt winkelen. Je kan natuurlijk ook een wandeling doen door de oude huizen. Net
+                        buiten de Amsterdamse wijk is de Amsterdamse poort, de poort van de oude stadsmuur. Dit mooie oude gebouw is een echte
+                        aanrader als je meer wilt leren over de geschiedenis van Haarlem. De Amsterdamse wijk is al oud, maar er is toch veel
+                        nieuwbouw te vinden. Dit komt doordat er houtrot werd ontdekt in de houten palen waarop veel huizen waren gebouwd.
+                        Hierdoor waren de huizen niet meer veilig om in te wonen en moesten veel mensen dus moesten verhuizen omdat er veel
+                        huizen moesten worden gesloopt en nieuwe huizen in de plaats komen. Daarvoor waren er ook al veel oude huizen verloren
+                        tijdens het bombardement in 1943 waarbij ongeveer 1600 huizen schaden opliepen. Naast dat er genoeg te doen is voor
+                        toeristen, zijn er ook veel mogelijkheden om te werken in de wijk.
                     </p>
                     <!-- Two images -->
                     <img src="./img/haarlem-img2.png" alt="Molen naast het Spaarne" title="Spaarne" />
+                    <img src="./img/haarlem-img4.png" alt="Gracht met huizen aan weerzeide" title="Huizen aan de gracht" />
                 </section>
                 <footer>
                     <a href="https://nl.wikipedia.org/wiki/Amsterdamsewijk">
-                        <button>Lees verder</button>
+                        Lees verder
                     </a>
                 </footer>
             </article>
+            <!-- Contains all content related to sport -->
             <article id="sportContent">
                 <header>
                     <h2>Sport in Haarlem</h2>
                 </header>
                 <section>
                     <ul>
-                        <!-- At least 10 -->
                         <li>
                             <h3>Ryounkai Karate</h3>
                             <img src="./img/sport-1.png" alt="Mensen die karate oefenen op het strand." title="Karate op strand">
                             <p>
-                                Is opgericht in 1974. Geeft les in karate op basis van Budo.
+                                Is opgericht in 1974.
+                                Geeft les in karate op basis van Budo.
                             </p>
                             <a href="https://www.ryounkai.nl/">Website</a>
                         </li>
@@ -106,73 +134,85 @@
                             <h3>Munen Muso</h3>
                             <img src="./img/sport-2.png" alt="Kinderen die karate beoefenen." title="Oefenen van karate">
                             <p>
-                                Geeft les in vele sporten waaronder: Judo, Karate en Tai Ki Jutsu. Is deel van judo bond nederland.
+                                Geeft les in vele sporten waaronder: Judo, Karate en Tai Ki Jutsu.
+                                Is lid van judo bond nederland.
                             </p>
                             <a href="http://www.munenmuso.nl/">Website</a>
                         </li>
                         <li>
                             <h3>Aarde Tai Chi</h3>
-                            <img src="./img/sport-3.jpg" alt="Man die Tai Chi beoefend op een veld" title="Tai Chi">
+                            <img src="./img/sport-3.png" alt="Man die Tai Chi beoefend op een veld" title="Tai Chi">
                             <p>
-                                Gefocused op flow sessions. Bied ook sessions voor bedrijven.
+                                Gefocused op flow sessions.
+                                Bied ook sessions voor bedrijven.
                             </p>
                             <a href="http://aardetaichi.nl">Website</a>
                         </li>
                         <li>
                             <h3>Hapki Kochido Musool</h3>
-                            <img src="./img/sport-4.jpg" alt="Beoefenen van Hapki Kochido Musool bij de zee" title="Hapki Kochido Musool">
+                            <img src="./img/sport-4.png" alt="Beoefenen van Hapki Kochido Musool bij de zee" title="Hapki Kochido Musool">
                             <p>
-                                Geeft les in Hapki Kochido Musool. Dit een moderne koreaanse vechtsport.
+                                Geeft les in Hapki Kochido Musool.
+                                Dit een moderne koreaanse vechtsport.
                             </p>
                             <a href="https://goo.gl/maps/wxB3vcCN6hoE3t8p9">Google Maps</a></li>
                         <li>
                             <h3>Aikido Ryu Jan Rusman</h3>
-                            <img src="./img/sport-5.jpg" alt="Man die een zwaard vlak bij zijn gezicht houd en waarin je de reflectie van zijn gezicht kan zien" title="Aikido">
+                            <img src="./img/sport-5.png" alt="Man die een zwaard vlak bij zijn gezicht houd en waarin je de reflectie van zijn gezicht kan zien" title="Aikido">
                             <p>
-                                Aikido wordt gezien als een vreedzame krijgskunst. Aikido Ryu Jan Rusman is de eerste die Aikido geeft in Haalem.
+                                Aikido wordt gezien als een vreedzame krijgskunst.
+                                Aikido Ryu Jan Rusman is de eerste die Aikido geeft in Haalem.
                             </p>
                             <a href="https://aikido-rusman.nl/">Website</a>
                         </li>
                         <li>
                             <h3>Budokan in Haarlem</h3>
+                            <img src="./img/sport-6.png" alt="Twee mannen trainen binnen" title="Budokan">
                             <p>
-
+                                Bied verschillende vechtsporten aan.
+                                Bied een regulier programma aan. 
                             </p>
                             <a href="http://www.kochokai.nl/">Website</a>
                         </li>
                         <li>
                             <h3>Kung Fu Haarlem</h3>
+                            <img src="./img/sport-7.png" alt="Vrouw in kung fu pose" title="Kung Fu">
                             <p>
-
+                                Specified gefocused op Kung FU.
+                                Bied 2 gratis proeflessen aan.
                             </p>
                             <a href="https://www.kungfuhaarlem.com/">Website</a>
                         </li>
                         <li>
                             <h3>Zelfverdediging 'In de Toelast'</h3>
+                            <img src="./img/sport-8.png" alt="Twee mannen trainen binnen" title="Jutsu training" />
                             <p>
-
+                                Geeft les in Karate Jutsu, Tai Ji Quan en zelfverdediging.
+                                Les in kleine groepen.
                             </p>
                             <a href="http://indetoelast.nl/">Website</a></li>
                         <li>
                             <h3>Broadbents’ Gym en Zelfverdediging</h3>
+                            <img src="./img/sport-9.png" alt="Twee mannen trainen binnen" title="Zelfverdediging training" />
                             <p>
-
+                                Werkt aan zelfvertrouwen en conditie.
+                                Heeft als doel zelfvertrouwen.
                             </p>
                             <a href="http://www.broadbents.nl/">Website</a>
                         </li>
                         <li>
-                            <h3>BJJ Haarlem</h3>
+                            <h3>Hwa-Rang Dragon</h3>
                             <p>
-
+                                Hier wordt Braziliaans jiu-jitsu gegeven.
+                                Bied gratis proeflessen aan.
                             </p>
-                            <a href="http://bjj-haarlem.com">Website</a>
+                            <a href="https://www.taekwon.nl/brazilian-jiu-jitsu/">Website</a>
                         </li>
                     </ul>
-                    <img src="" alt="">
                 </section>
                 <footer>
                     <a href="https://www.google.com/maps/search/martial+arts+club/@52.3819361,4.628905,15z/data=!3m1!4b1">
-                        <button>Meer op Google Maps</button>
+                        Vind meer op Google Maps
                     </a>
                 </footer>
             </article>
@@ -181,11 +221,27 @@
                     <h2>Over de referral</h2>
                 </header>
                 <section>
+                    <h3>Hwa-Rang Dragon</h3>
                     <p>
-
+                        Deze website is gemaakt voor Hwa-Rang DragonHwa-Rang DragonHwa-Rang DragonHwa-Rang DragonHwa-Rang Dragon. Je kan hier
+                        Braziliaans jiu-jitsu (of BJJ) leren. Zo blijf je fit en ontspan je de geest. Als je nog niet helemaal zeker weet of BJJ
+                        iets voor je is, kan je twee gratis proeflessen krijgen om je keuzen te maken.
                     </p>
                 </section>
-                <aside></aside>
+                <aside>
+                    <h3>Verdere informatie</h3>
+                    <ul>
+                        <li>Address: Stresemannlaan 60, 2037 TK Haarlem</li>
+                        <li>
+                            Twee gratis proeflessen:
+                            <ul>
+                                <li>Woensdag 19:00-20:00 Jeugd (14jr+) en Volwassenen</li>
+                                <li>Zaterdag 09:30-10:30 Jeugd (14jr+) en Volwassenen</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.taekwon.nl/brazilian-jiu-jitsu/">Bezoek de website</a></li>
+                    </ul>
+                </aside>
                 <footer></footer>
             </article>
             <section id="contactContent">
@@ -195,22 +251,34 @@
                 <form action="http://witan.nl/inholland/testform.php" method="POST">
                     <fieldset>
                         <legend>Contact Formulier</legend>
-                        <input name="name" type="text" placeholder="Naam" required />
-                        <input name="email" type="email" placeholder="E-Mail" required />
-                        <textarea name="message" placeholder="Bericht" required></textarea>
-                        <input type="submit" value="Stuur" />
+                        <input name="name" type="text" placeholder="Naam" tabindex="1" required />
+                        <input name="email" type="email" placeholder="E-Mail" tabindex="2" required />
+                        <textarea name="message" placeholder="Bericht" tabindex="3" rows="6" required></textarea>
+                        <button type="submit">Verstuur</button>
                     </fieldset>
+                    <section>
+                        <p>
+                            Heeft u vragen of wilt u iets toevoegen? U kan contact met mij opnemen en ik reageer zo snel mogelijk terug.
+                        </p>
+                        <p>
+                            Ik zal nooit zonder uw toestemming uw email address gebruiken voor een andere reden dan dat u contact met mij heeft opgenomen.
+                        </p>
+                    </section>
                 </form>
-                <footer>
-                    
-                </footer>
+                <footer></footer>
             </section>
         </section>
-        <section id="usingCookies">
-            <p>Deze pagina gebruikt </p>
-        </section>
+        <!-- Cookie banner -->
+        <span class="cookieBanner">
+            <input id="cookieToggle" type="checkbox" />
+            <label id="cookie" for="cookieToggle">
+                Deze website maakt gebruik van cookies voor de beste ervaring
+                <a>accepteer</a>
+            </label>
+        </span>
+        <!-- Footer containing copyright notice -->
         <footer>
-            &copy; Bjørn Reemer (642238, INF1SD) <a href="./content/credits.pdf">auteurs van de afbeeldingen</a>
+            &copy; Bjørn Reemer (642238, INF1SD) <a href="./content/credits.pdf">auteurs van gebruikte afbeeldingen</a>
         </footer>
     </body>
 </html>

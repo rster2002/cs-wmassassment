@@ -38,17 +38,48 @@ nav {
 
 nav h1 {
   margin: 0;
-  display: block;
   position: relative;
-  top: 50%;
+  top: 10px;
   left: 16px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   display: inline-block;
   float: left;
   font-family: "UnifrakturMaguntia", cursive, arial;
   color: #ffffff;
   font-size: 2rem;
+}
+
+nav #hamburgerToggle, nav #hamburger {
+  display: none;
+}
+
+nav #hamburger {
+  height: 52px;
+  width: 52px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+nav #hamburger .hamburgerStyling {
+  height: 32px;
+  width: 32px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+}
+
+nav #hamburger .hamburgerStyling span {
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #4ba3d6;
+}
+
+nav #hamburger .hamburgerStyling span:nth-child(2) {
+  margin: 13px 0px;
 }
 
 nav ul {
@@ -106,7 +137,7 @@ nav ul li a {
   margin: 0;
   font-family: "NotoSerif", serif, arial;
   font-size: 2rem;
-  color: #cecece;
+  color: #e7e7e7;
 }
 
 .mainHeader + video {
@@ -118,8 +149,7 @@ nav ul li a {
 
 .articles {
   width: 80%;
-  margin: auto;
-  margin-top: 16px;
+  margin: 16px auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
@@ -131,11 +161,13 @@ nav ul li a {
 }
 
 .articles article, .articles #contactContent {
+  width: 100%;
   position: relative;
   padding-bottom: 83px;
   border: #363636 1px solid;
   border-radius: 5px;
   background-color: #ffffff;
+  display: inline-block;
 }
 
 .articles article header, .articles #contactContent header {
@@ -156,33 +188,38 @@ nav ul li a {
   color: #ffffff;
 }
 
-.articles article section, .articles #contactContent section {
+.articles article section, .articles article aside, .articles #contactContent section, .articles #contactContent aside {
   width: 100%;
 }
 
-.articles article section p, .articles #contactContent section p {
+.articles article section h3, .articles article aside h3, .articles #contactContent section h3, .articles #contactContent aside h3 {
+  padding: 0px 16px;
+  font-family: "NotoSerif", serif, arial;
+}
+
+.articles article section p, .articles article aside p, .articles #contactContent section p, .articles #contactContent aside p {
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 0px 16px;
   font-family: "NotoSerif", serif, arial;
 }
 
-.articles article section img, .articles #contactContent section img {
+.articles article section img, .articles article aside img, .articles #contactContent section img, .articles #contactContent aside img {
   height: 128px;
   margin-left: 16px;
   border-radius: 5px;
 }
 
-.articles article section ul, .articles #contactContent section ul {
+.articles article section ul, .articles article aside ul, .articles #contactContent section ul, .articles #contactContent aside ul {
   font-size: 16px;
   font-family: "NotoSerif", serif, arial;
 }
 
-.articles article section ul p, .articles #contactContent section ul p {
+.articles article section ul p, .articles article aside ul p, .articles #contactContent section ul p, .articles #contactContent aside ul p {
   padding: 0;
 }
 
-.articles article section ul img, .articles #contactContent section ul img {
+.articles article section ul img, .articles article aside ul img, .articles #contactContent section ul img, .articles #contactContent aside ul img {
   margin-left: 0;
 }
 
@@ -220,6 +257,15 @@ nav ul li a {
   grid-area: 2 / 1 / 4 / 2;
 }
 
+#referralContent {
+  font-family: "NotoSerif", serif, arial;
+}
+
+#referralContent section, #referralContent aside {
+  width: 50%;
+  float: left;
+}
+
 #contactContent {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
@@ -231,6 +277,10 @@ nav ul li a {
 #contactContent form {
   width: 95%;
   margin: 16px auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
 }
 
 #contactContent form fieldset {
@@ -243,14 +293,18 @@ nav ul li a {
 }
 
 #contactContent form fieldset input {
-  width: 50%;
+  width: calc(100% - 16px);
   display: block;
   margin: 8px 0px;
+  padding: 8px;
+  outline: 0;
   font-family: "NotoSerif", serif, arial;
   font-size: 16px;
+  border: 2px solid #4ba3d6;
+  border-radius: 5px;
 }
 
-#contactContent form fieldset input[type=submit] {
+#contactContent form fieldset button {
   padding: 8px 16px;
   outline: 0;
   border: 2px solid #4ba3d6;
@@ -263,23 +317,72 @@ nav ul li a {
   width: 100%;
 }
 
-#contactContent form fieldset input[type=submit]:hover {
+#contactContent form fieldset button:hover {
   background-color: #4ba3d6;
   color: #ffffff;
 }
 
 #contactContent form fieldset textarea {
-  width: 50%;
+  width: calc(100% - 16px);
+  padding: 8px;
+  outline: 0;
   resize: vertical;
   font-family: "NotoSerif", serif, arial;
   font-size: 16px;
+  border: 2px solid #4ba3d6;
+  border-radius: 5px;
+}
+
+#contactContent form section p:first-child {
+  margin-top: 32px;
+}
+
+.cookieBanner #cookieToggle {
+  display: none;
+}
+
+.cookieBanner #cookieToggle:checked ~ #cookie {
+  display: none;
+}
+
+.cookieBanner #cookie {
+  width: calc(100% - 32px);
+  padding: 16px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 6;
+  background-color: #6e6e6e;
+  color: #ffffff;
+  text-align: center;
+}
+
+.cookieBanner #cookie a {
+  margin-left: 16px;
+  text-decoration: underline;
+  color: #bfceff;
+  cursor: pointer;
+}
+
+footer {
+  width: calc(100% - 64px);
+  padding: 32px;
+  background-color: #575757;
+  color: #ffffff;
+  font-family: "NotoSerif", serif, arial;
+}
+
+footer a {
+  color: #bfceff;
 }
 
 @media screen and (max-width: 1300px) {
   .articles {
     width: 95%;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    display: block;
+  }
+  .articles article {
+    margin: 16px 0px;
   }
 }
 
@@ -289,13 +392,51 @@ nav ul li a {
     background-size: cover;
     background-repeat: no-repeat;
   }
+  nav {
+    height: unset;
+    min-height: 52px;
+    display: inline-block;
+  }
+  nav ul {
+    height: unset;
+    margin-left: 64px;
+    display: none;
+    list-style: circle;
+  }
+  nav ul li {
+    margin: 16px 0px;
+    float: none;
+  }
+  nav ul li a {
+    top: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  nav #hamburger {
+    display: block;
+  }
+  nav #hamburgerToggle:checked ~ ul {
+    display: block;
+  }
   video {
     display: none;
   }
 }
 
 @media screen and (max-width: 600px) {
-  nav {
-    height: 64px;
+  .mainHeader {
+    height: 50%;
+  }
+  .mainHeader .floatingWrapper h1 {
+    font-size: 4rem;
+  }
+  .mainHeader .floatingWrapper h2 {
+    font-size: 1.5rem;
+  }
+  #referralContent section, #referralContent aside {
+    width: 100%;
+  }
+  #contactContent form {
+    display: block;
   }
 }
